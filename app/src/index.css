@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -11,4 +13,33 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: max-content;
+  padding: 43px 140px;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+.header__top {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 45px;
+  margin: 8px 0;
+}
+.header__bottom {
+  font-size: 16px;
+  line-height: 21px;
+  margin: 8px 0;
+}
+
+.search-bar {
+  width: 100%;
+  height: 32px;
+  border: thin solid #919EAB;
 }
