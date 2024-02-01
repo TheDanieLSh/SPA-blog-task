@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { resolve } from "path";
+import { useEffect, useState } from "react";
 
 export default function Posts() {
     interface Post {
@@ -7,21 +8,19 @@ export default function Posts() {
         "title": String,
         "body": String,
     }
+    
+    const [postsArray, setPostsArray] = useState<Post[]>([]);
 
-    let postsArray: Post[] = [];
     const dataFetch = async () => {
         const fetchedData = await fetch('https://jsonplaceholder.typicode.com/posts');
-        postsArray = await fetchedData.json();
+        setPostsArray(await fetchedData.json());
     }
-    useEffect(() => {
-        dataFetch();
-    }, [])
-    console.log(postsArray);
-    
 
-    if (postsArray.length > 0) {
-        return (
-            <main>
+    dataFetch();
+
+    return (
+        <main>
+            { postsArray.length ? (
                 <div className="main__first-post">
                     <img src="https://placehold.co/1140x600" />
                     <div className="main-post__content">
@@ -35,10 +34,10 @@ export default function Posts() {
                         <div className="main-post__footer"></div>
                     </div>
                 </div>
-                <div className="main__further-posts"></div>
-            </main>
-        )
-    } else return (
-        <main></main>
+            ) : (
+                <div>Posts not found.</div>
+            ) }
+            <div className="main__further-posts"></div>
+        </main>
     )
 }
