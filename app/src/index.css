@@ -19,6 +19,7 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  gap: 32px;
   width: 100vw;
   height: max-content;
   padding: 64px 130px;
@@ -26,16 +27,19 @@ a {
   font-family: 'Roboto';
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .header__top {
   font-weight: bold;
   font-size: 60px;
   line-height: 68px;
-  margin: 8px 0;
 }
 .header__bottom {
   font-size: 24px;
   line-height: 32px;
-  margin: 8px 0;
 }
 
 .search-bar {

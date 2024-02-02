@@ -16,22 +16,26 @@ export default function Posts() {
         setPostsArray(await fetchedData.json());
     }
 
-    dataFetch();
+    useEffect(() => {
+        dataFetch();
+    }, [])
 
     return (
         <main>
             { postsArray.length ? (
                 <div className="main__first-post">
                     <img src="https://placehold.co/1140x600" />
-                    <div className="main-post__content">
-                        <div className="main-post__header">
-                            <div className="main-post__title">{postsArray[0].title}</div>
-                            <div className="main-post__reactions"></div>
+                    <div className="first-post__content">
+                        <div className="first-post__header">
+                            <div className="first-post__title">{postsArray[0].title}</div>
+                            <div className="first-post__reactions"></div>
                         </div>
-                        <div className="main-post__body">
-                            <p className="main-post__text">{postsArray[0].body}</p>
+                        <div className="first-post__body">
+                            <p className="first-post__text">{postsArray[0].body}</p>
                         </div>
-                        <div className="main-post__footer"></div>
+                        <div className="first-post__footer">
+                            <div className="first-post__button">Читать далее</div>
+                        </div>
                     </div>
                 </div>
             ) : (
