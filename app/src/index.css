@@ -15,12 +15,16 @@ a {
   color: inherit;
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+}
 .app {
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 32px;
-  width: 100vw;
+  width: 1400px;
   height: max-content;
   padding: 64px 130px;
   text-align: center;
@@ -40,6 +44,7 @@ header {
 .header__bottom {
   font-size: 24px;
   line-height: 32px;
+  text-align: left;
 }
 
 .search-bar {
