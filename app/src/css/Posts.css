@@ -66,4 +66,9 @@ main {
   text-align: center;
   border: 2px solid black;
   border-radius: 60px;
+}
+
+.maim__further-posts {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=Posts.css.map */
