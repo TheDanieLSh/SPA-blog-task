@@ -10,6 +10,7 @@ export default function Posts() {
     }
 
     const [postsArray, setPostsArray] = useState<Post[]>([]);
+    const furtherPosts = postsArray.slice(1, 5);
 
     const dataFetch = async () => {
         const fetchedData = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -52,8 +53,24 @@ export default function Posts() {
                         </div>
                     </div>
                     <div className="main__further-posts">
-                        {postsArray.map((post, i) => (
-                            if (i  <= 3)
+                        {furtherPosts.map((post): JSX.Element => (
+                            <div className="post">
+                                <img src="https://placehold.co/558x273" />
+                                <div className="post__topic">{post.title}</div>
+                                <div className="post__footer">
+                                    <div className="post__reactions">
+                                        <div className="reactions__likes">
+                                            <img src="like_grey.svg" />
+                                            <div className="count">0</div>
+                                        </div>
+                                        <div className="reactions__dislikes">
+                                            <img src="dislike_grey.svg" />
+                                            <div className="count">0</div>
+                                        </div>
+                                    </div>
+                                    <div className="post__button">Читать далее</div>
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>
